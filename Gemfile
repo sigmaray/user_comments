@@ -36,6 +36,7 @@ gem "bootsnap", require: false
 
 gem "activeadmin", "~> 3.2"
 gem "devise", "~> 4.9"
+gem "sassc-rails", "~> 2.1"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
