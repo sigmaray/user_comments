@@ -37,6 +37,8 @@ gem "bootsnap", require: false
 gem "activeadmin", "~> 3.2"
 gem "devise", "~> 4.9"
 gem "sassc-rails", "~> 2.1"
+gem "rswag", "~> 2.16"
+gem "kaminari", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -47,6 +49,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem 'rspec-rails', '~> 7.0.0'
 end
 
 group :development do
