@@ -4,6 +4,10 @@ class Api::V1::ApiController < ActionController::API
 
   private
 
+  def default_per_page
+    Kaminari.configure { |config| config.default_per_page }
+  end
+
   def render_not_found_response(exception)
     render json: { error: exception.message }, status: :not_found
   end
