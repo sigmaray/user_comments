@@ -9,9 +9,14 @@
 #   end
 
 if Rails.env.development?
+  User.destroy_all
   User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-  100.times.each do |i|
-    User.create!(email: "user#{i+1}@example.com", password: 'password', password_confirmation: 'password')
+  10.times.each do |i|
+    email = "user#{i+1}@example.com"
+    user = User.create!(email:, password: 'password', password_confirmation: 'password')
+    10.times.each do |j|
+      user.comments.create!(text: "#{email} - Comment #{j+1}")
+    end
   end
 end
