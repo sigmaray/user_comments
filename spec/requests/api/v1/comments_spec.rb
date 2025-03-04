@@ -10,7 +10,11 @@ RSpec.describe 'Api::V1::Comments', type: :request do
       response '200', 'Successful response' do
         schema type: :object,
           properties: {
-            comments: {
+            count: { type: :integer },
+            current_page: { type: :integer },
+            total_pages: { type: :integer },
+            per_page: { type: :integer },
+            items: {
               type: :array,
               items: {
                 type: :object,
@@ -25,7 +29,7 @@ RSpec.describe 'Api::V1::Comments', type: :request do
               }
             }
           },
-          required: %w[comments]
+          required: %w[items]
 
         let(:user) { User.create!(email: 'john@doe.com', password: 'password', password_confirmation: 'password') }
         let(:user_id) { user.id }
