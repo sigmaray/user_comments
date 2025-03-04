@@ -33,6 +33,12 @@ RSpec.describe 'Api::V1::Comments', type: :request do
 
         run_test!
       end
+
+      response '404', 'User not found' do
+        let(:user_id) { 'invalid' }
+  
+        run_test!
+      end
     end
   end
 end
